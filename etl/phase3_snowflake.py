@@ -22,9 +22,7 @@ def print_section(title):
     print(f"  {title}")
     print(f"{'='*55}")
 
-# ─────────────────────────────────────────────
 # CONNECT TO SNOWFLAKE
-# ─────────────────────────────────────────────
 
 print_section("Connecting to Snowflake")
 
@@ -42,9 +40,7 @@ print(f"   Account  : {os.getenv('SNOWFLAKE_ACCOUNT')}")
 print(f"   Database : {os.getenv('SNOWFLAKE_DATABASE')}")
 print(f"   Schema   : {os.getenv('SNOWFLAKE_SCHEMA')}")
 
-# ─────────────────────────────────────────────
 # LOADER FUNCTION
-# ─────────────────────────────────────────────
 
 def load_table(csv_filename, table_name, dtype_map=None):
     """Load a CSV into a Snowflake table using write_pandas."""
@@ -75,9 +71,7 @@ def load_table(csv_filename, table_name, dtype_map=None):
 
     return nrows
 
-# ─────────────────────────────────────────────
 # LOAD ALL 6 TABLES
-# ─────────────────────────────────────────────
 
 print_section("Loading Tables into Snowflake")
 
@@ -91,9 +85,7 @@ total_rows += load_table('fact_orders.csv',   'FACT_ORDERS')
 total_rows += load_table('fact_inventory.csv','FACT_INVENTORY',
                           dtype_map={'CustomerID': str})
 
-# ─────────────────────────────────────────────
 # VERIFY WITH COUNTS
-# ─────────────────────────────────────────────
 
 print_section("Verifying Row Counts in Snowflake")
 
@@ -109,9 +101,7 @@ for table in tables:
     print(f"  {table:<25} {count:>10,} rows")
 cursor.close()
 
-# ─────────────────────────────────────────────
 # CREATE ANALYTICAL VIEWS
-# ─────────────────────────────────────────────
 
 print_section("Creating Analytical Views")
 
@@ -240,9 +230,7 @@ for view_name, sql in views.items():
         print(f"  {view_name} failed: {e}")
 cursor.close()
 
-# ─────────────────────────────────────────────
 # DONE
-# ─────────────────────────────────────────────
 
 conn.close()
 
@@ -250,5 +238,3 @@ print_section("PHASE 3 COMPLETE")
 print(f"  Total rows loaded : {total_rows:,}")
 print(f"  Tables            : 6")
 print(f"  Analytical views  : {len(views)}")
-print(f"\n  Next: Connect Power BI to Snowflake")
-print(f"  Then: Run app/streamlit_app.py")
