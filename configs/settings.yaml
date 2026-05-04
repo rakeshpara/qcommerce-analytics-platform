@@ -1,0 +1,12 @@
+project_name: qcommerce_platform
+
+data:
+  sales_file: data/raw/Adventures-Online-Sales.xlsx
+  inventory_file: data/raw/Online Retail.xlsx
+  interim_dir: data/interim
+  processed_dir: data/processed
+
+output:
+  reports_dir: reports
+  figures_dir: reports/figures
+  logs_dir: logs

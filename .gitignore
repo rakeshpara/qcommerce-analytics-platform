@@ -1,0 +1,47 @@
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+
+# Build and packaging
+build/
+dist/
+*.egg-info/
+
+# Test and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE/editor
+.vscode/
+.idea/
+
+# Data outputs and logs
+data/raw/
+data/cleaned/
+data/schema/
+data/interim/*
+data/processed/*
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+logs/*
+!logs/.gitkeep
+
+# Dashboard and Streamlit
+*.pbix
+.streamlit/secrets.toml
+
+# OS files
+.DS_Store
+Thumbs.db
