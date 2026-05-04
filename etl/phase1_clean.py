@@ -16,9 +16,7 @@ RAW     = os.path.join(os.path.dirname(__file__), '..', 'data', 'raw')
 CLEANED = os.path.join(os.path.dirname(__file__), '..', 'data', 'cleaned')
 os.makedirs(CLEANED, exist_ok=True)
 
-# ─────────────────────────────────────────────
 # HELPERS
-# ─────────────────────────────────────────────
 
 def excel_serial_to_date(n):
     """Convert Excel serial date integer to Python datetime."""
@@ -29,9 +27,7 @@ def print_section(title):
     print(f"  {title}")
     print(f"{'='*55}")
 
-# ─────────────────────────────────────────────
 # DATASET 1 — Adventures Online Sales
-# ─────────────────────────────────────────────
 
 print_section("DATASET 1 — Adventures Online Sales")
 
@@ -80,11 +76,9 @@ df1['MaritalStatus'] = df1['MaritalStatus'].map({'S': 'Single', 'M': 'Married'})
 # --- Save
 out1 = os.path.join(CLEANED, 'clean_orders.csv')
 df1.to_csv(out1, index=False)
-print(f"\n✅ Saved clean_orders.csv — {len(df1):,} rows")
+print(f"\n Saved clean_orders.csv — {len(df1):,} rows")
 
-# ─────────────────────────────────────────────
 # DATASET 2 — Online Retail (Inventory)
-# ─────────────────────────────────────────────
 
 print_section("DATASET 2 — Online Retail (Inventory)")
 
@@ -133,13 +127,9 @@ print(f"    Countries: {df2['Country'].nunique()}")
 # --- Save
 out2 = os.path.join(CLEANED, 'clean_inventory.csv')
 df2.to_csv(out2, index=False)
-print(f"\n✅ Saved clean_inventory.csv — {len(df2):,} rows")
+print(f"\n Saved clean_inventory.csv — {len(df2):,} rows")
 
-# ─────────────────────────────────────────────
 # SUMMARY
-# ─────────────────────────────────────────────
-
 print_section("PHASE 1 COMPLETE")
 print(f"  clean_orders.csv    → {len(df1):,} rows")
 print(f"  clean_inventory.csv → {len(df2):,} rows")
-print(f"\n  Next: Run etl/phase2_schema.py to build dimension & fact tables")
