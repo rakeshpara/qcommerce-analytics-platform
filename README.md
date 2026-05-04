@@ -1,10 +1,10 @@
-# 🛒 QCommerce Analytics Intelligence Platform
+# QCommerce Analytics Intelligence Platform
 
 An end-to-end data analytics platform simulating a quick commerce ecosystem (Blinkit/Zepto-style), built with Snowflake, Python, Power BI, and Streamlit.
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 Raw Data (Excel)
@@ -24,7 +24,7 @@ SQL Analytical Views (6 KPI views)
 
 ---
 
-## 📊 Dashboard Pages (Power BI)
+## Dashboard Pages (Power BI)
 
 | Page | Description |
 |---|---|
@@ -35,7 +35,7 @@ SQL Analytical Views (6 KPI views)
 
 ---
 
-## 🤖 Streamlit App Features
+## Streamlit App Features
 
 | Feature | Description |
 |---|---|
@@ -46,7 +46,7 @@ SQL Analytical Views (6 KPI views)
 
 ---
 
-## 🗄️ Data Model (Constellation Schema)
+## Data Model (Constellation Schema)
 
 ```
              DIM_DATE
@@ -67,7 +67,7 @@ DIM_CUSTOMER—FACT_ORDERS   FACT_INVENTORY—DIM_WAREHOUSE
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Tool |
 |---|---|
@@ -81,7 +81,7 @@ DIM_CUSTOMER—FACT_ORDERS   FACT_INVENTORY—DIM_WAREHOUSE
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 qcommerce_platform/
@@ -107,7 +107,7 @@ qcommerce_platform/
 
 ---
 
-## ⚙️ How to Run Locally
+## How to Run Locally
 
 **1. Clone the repo**
 ```bash
@@ -151,7 +151,7 @@ streamlit run app/streamlit_app.py
 
 ---
 
-## 📈 Key Business KPIs
+## Key Business KPIs
 
 - **Total Revenue:** $29.3M across 60,382 orders
 - **Avg Profit Margin:** 53.3%
@@ -161,7 +161,7 @@ streamlit run app/streamlit_app.py
 
 ---
 
-## 🔍 Intelligence Features
+## Intelligence Features
 
 **Anomaly Detection**
 Uses Z-score (threshold = 2.0) to flag:
@@ -177,13 +177,13 @@ Three interactive scenarios:
 
 ---
 
-## 👤 Author
+## Author
 
 **Rakesh Para**
 Data Analytics | Python | SQL | Power BI | Snowflake
 
 ---
 
-## 📄 License
+## License
 
 MIT License
