@@ -29,9 +29,7 @@ def print_section(title):
     print(f"  {title}")
     print(f"{'='*55}")
 
-# ─────────────────────────────────────────────
 # LOAD CLEANED DATA
-# ─────────────────────────────────────────────
 
 print_section("Loading Cleaned Data")
 
@@ -41,9 +39,7 @@ df2 = pd.read_csv(os.path.join(CLEANED, 'clean_inventory.csv'), parse_dates=['In
 print(f"clean_orders.csv    : {len(df1):,} rows")
 print(f"clean_inventory.csv : {len(df2):,} rows")
 
-# ─────────────────────────────────────────────
 # DIM_CUSTOMER
-# ─────────────────────────────────────────────
 
 print_section("Building dim_customer")
 
@@ -72,9 +68,7 @@ out = os.path.join(SCHEMA, 'dim_customer.csv')
 dim_customer.to_csv(out, index=False)
 print(f"\n Saved dim_customer.csv — {len(dim_customer):,} rows")
 
-# ─────────────────────────────────────────────
 # DIM_PRODUCT
-# ─────────────────────────────────────────────
 
 print_section("Building dim_product")
 
@@ -116,9 +110,7 @@ out = os.path.join(SCHEMA, 'dim_product.csv')
 dim_product.to_csv(out, index=False)
 print(f"\n Saved dim_product.csv — {len(dim_product):,} rows")
 
-# ─────────────────────────────────────────────
 # DIM_DATE
-# ─────────────────────────────────────────────
 
 print_section("Building dim_date")
 
@@ -150,9 +142,7 @@ out = os.path.join(SCHEMA, 'dim_date.csv')
 dim_date.to_csv(out, index=False)
 print(f"\n Saved dim_date.csv — {len(dim_date):,} rows")
 
-# ─────────────────────────────────────────────
 # DIM_WAREHOUSE
-# ─────────────────────────────────────────────
 
 print_section("Building dim_warehouse")
 
@@ -194,9 +184,7 @@ out = os.path.join(SCHEMA, 'dim_warehouse.csv')
 dim_warehouse.to_csv(out, index=False)
 print(f"\n Saved dim_warehouse.csv — {len(dim_warehouse)} rows")
 
-# ─────────────────────────────────────────────
 # FACT_ORDERS
-# ─────────────────────────────────────────────
 
 print_section("Building fact_orders")
 
@@ -246,9 +234,7 @@ out = os.path.join(SCHEMA, 'fact_orders.csv')
 fact_orders.to_csv(out, index=False)
 print(f"\n Saved fact_orders.csv — {len(fact_orders):,} rows")
 
-# ─────────────────────────────────────────────
 # FACT_INVENTORY
-# ─────────────────────────────────────────────
 
 print_section("Building fact_inventory")
 
@@ -306,9 +292,8 @@ out = os.path.join(SCHEMA, 'fact_inventory.csv')
 fact_inventory.to_csv(out, index=False)
 print(f"\n Saved fact_inventory.csv — {len(fact_inventory):,} rows")
 
-# ─────────────────────────────────────────────
+
 # FINAL SUMMARY
-# ─────────────────────────────────────────────
 
 print_section("PHASE 2 COMPLETE — Schema Summary")
 
@@ -324,5 +309,3 @@ files = {
 for fname, rows in files.items():
     print(f"  {fname:<25} {rows:>10,} rows")
 
-print(f"\n  Next: Upload all 6 CSVs to Snowflake")
-print(f"  Run: etl/phase3_snowflake.py")
